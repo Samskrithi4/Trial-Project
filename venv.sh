@@ -1,5 +1,5 @@
 #!/bin/sh
-python="/anvil/projects/tdm/apps/lmodbin/python-seminar/python"
+python="./python"
 # run ./venv.sh before running the program
 if [ "$(basename $(pwd))" = "Trial_Project" ]; then
     $python -m venv venv
