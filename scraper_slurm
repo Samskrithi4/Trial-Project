@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH -J movies_scrape
+#SBATCH -n 1
+#SBATCH -t 2:00:00
+#SBATCH -a 1-27%5
+
+cd $SLURM_SUBMIT_DIR
+website="$(awk NR==$SLURM_ARRAY_TASK_ID url.txt)"
+echo "$website"
+source venv/bin/activate
+python final_movie_scraper.py "$website" "/home/x-samskrithi4/Trial_Project/scraping_job/$website".txt
+
